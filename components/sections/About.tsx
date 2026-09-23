@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -50,16 +51,23 @@ export default function About() {
         {/* Portrait */}
         <div>
           <div className="about-portrait">
-            {/* ─── Replace this with your actual photo ─── */}
-            {/* <Image src="/photo.jpg" alt="Nikhil" fill style={{ objectFit: 'cover' }} /> */}
-            <div className="about-portrait-placeholder">
-              <span style={{ opacity: 0.3, textAlign: "center", lineHeight: 2 }}>
-                Photo
-                <br />
-                Placeholder
-              </span>
-            </div>
-            <div className="about-portrait-label">
+            <Image
+              src="/portrait.webp"
+              alt="Nikhil — Full Stack Developer & Creative Engineer"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 400px"
+              style={{ objectFit: "cover" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 40%)",
+                pointerEvents: "none",
+              }}
+            />
+            <div className="about-portrait-label" style={{ color: "#ffffff", zIndex: 2, fontWeight: 500 }}>
               Nikhil — Delhi NCR, India — 2026
             </div>
           </div>

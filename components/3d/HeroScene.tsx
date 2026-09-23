@@ -13,7 +13,7 @@ import * as THREE from "three";
 // 1. ROTATING NATURAL EARTH (Bright, crisp, clean colors — no pink or dark shadows)
 // ─────────────────────────────────────────────────────────────────────────────
 function EarthGlobe() {
-  const earthTexture = useTexture("/earth.jpg");
+  const earthTexture = useTexture("/earth-opt.webp");
   earthTexture.colorSpace = THREE.SRGBColorSpace;
 
   const earthRef = useRef<THREE.Mesh>(null);

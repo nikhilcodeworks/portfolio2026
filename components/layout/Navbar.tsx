@@ -45,7 +45,7 @@ export default function Navbar() {
         className="nav__logo"
         aria-label="Nikhil — Home"
       >
-        NK<span>.</span>
+        Nikhil<span>.</span>
       </Link>
 
       {/* Desktop nav links */}

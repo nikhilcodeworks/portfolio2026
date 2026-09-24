@@ -43,23 +43,34 @@ export default function CustomCursor() {
 
     // State changes for hover targets
     const handleEnterLink = () => {
+      dot.classList.add("cursor-pink");
       ring.classList.add("cursor-hover");
       label.textContent = "OPEN";
       label.classList.add("visible");
     };
     const handleLeaveLink = () => {
+      dot.classList.remove("cursor-pink");
       ring.classList.remove("cursor-hover");
       label.classList.remove("visible");
     };
-    const handleEnterProject = (e: Event) => {
-      const target = e.currentTarget as HTMLElement;
+    const handleEnterProject = () => {
+      dot.classList.add("cursor-pink");
       ring.classList.add("cursor-project");
       label.textContent = "VIEW →";
       label.classList.add("visible");
     };
     const handleLeaveProject = () => {
+      dot.classList.remove("cursor-pink");
       ring.classList.remove("cursor-project");
       label.classList.remove("visible");
+    };
+    const handleEnterText = () => {
+      dot.classList.add("cursor-pink");
+      ring.classList.add("cursor-pink");
+    };
+    const handleLeaveText = () => {
+      dot.classList.remove("cursor-pink");
+      ring.classList.remove("cursor-pink");
     };
 
     const addListeners = () => {
@@ -74,6 +85,13 @@ export default function CustomCursor() {
         el.addEventListener("mouseenter", handleEnterProject);
         el.addEventListener("mouseleave", handleLeaveProject);
       });
+
+      document
+        .querySelectorAll("p, h1, h2, h3, h4, h5, h6, .line-wrap, .skill-item, .contact-link, .timeline-item, .section-desc, .project-tag")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", handleEnterText);
+          el.addEventListener("mouseleave", handleLeaveText);
+        });
     };
 
     // Add after a short delay to catch dynamic elements
